@@ -1,6 +1,7 @@
 package main
 
 import (
+	pb "client"
 	"fmt"
 	"github.com/golang/protobuf/proto"
 	"io/ioutil"
@@ -9,7 +10,7 @@ import (
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		myClient := Client{}
+		myClient := pb.Client{}
 
 		data, err := ioutil.ReadAll(r.Body)
 
